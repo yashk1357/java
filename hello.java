@@ -2,9 +2,55 @@ class Hello{
     public static void main(String a[]){
         System.out.println("Hello World");
         DataType.data_type();
+
+        int nums_1D[] = Array.assign_values(new int[5]);
+        Array.print_array(nums_1D);
+
+        int nums_2D[][] = Array.assign_values(new int[5][9]);
+        Array.print_array(nums_2D);
     }
 
 }
+class Array{
+
+    public static int[] assign_values(int arr[]){
+        System.out.println("Assigning random values to array...");
+        for(int i=0; i<arr.length; i++){
+            arr[i] = (int)(Math.random()*10);
+        }
+        return arr;
+    }
+
+    public static void print_array(int arr[]){
+        System.out.println("printing array elements...");
+        for(int n:arr){
+            System.out.println(n);
+        }
+    }
+
+    // Method overloading 
+    public static int[][] assign_values(int arr[][]){
+        System.out.println("Assigning random values to 2D array...");
+        for(int i=0; i<arr.length; i++){
+            for(int j=0; j<arr[i].length; j++){
+                arr[i][j] = (int)(Math.random()*10);
+            }
+        }
+        return arr;
+    }
+
+    public static void print_array(int arr[][]){
+        System.out.println("printing array elements...");
+        for(int n[]:arr){
+            for(int m:n){
+                System.out.print(m + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
 class DataType{
     static void data_type(){
         byte num1= 89;
