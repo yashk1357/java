@@ -19,23 +19,30 @@ class Initializer{
 
     void arrays(){
         int arr[] = new int[5];
-        arr = Array.assign_values(arr);
+        Array.assign_values(arr);
         Array.print_array(arr);
 
         int arr2d[][] = new int[3][4];
-        arr2d = Array.assign_values(arr2d);
+        Array.assign_values(arr2d);
         Array.print_array(arr2d);
+
+        // jagged array
+        int jagged_arr[][] = new int[3][];
+        jagged_arr[0] = new int[2];
+        jagged_arr[1] = new int[4];
+        jagged_arr[2] = new int[3];
+        Array.assign_values(jagged_arr);
+        Array.print_array(jagged_arr);
     }
 }
 
 class Array{
 
-    public static int[] assign_values(int arr[]){
+    public static void assign_values(int arr[]){
         System.out.println("Assigning random values to array...");
         for(int i=0; i<arr.length; i++){
             arr[i] = (int)(Math.random()*10);
         }
-        return arr;
     }
 
     public static void print_array(int arr[]){
@@ -46,14 +53,13 @@ class Array{
     }
 
     // Method overloading 
-    public static int[][] assign_values(int arr[][]){
+    public static void assign_values(int arr[][]){
         System.out.println("Assigning random values to 2D array...");
         for(int i=0; i<arr.length; i++){
             for(int j=0; j<arr[i].length; j++){
                 arr[i][j] = (int)(Math.random()*10);
             }
         }
-        return arr;
     }
 
     public static void print_array(int arr[][]){
