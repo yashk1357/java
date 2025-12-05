@@ -1,16 +1,33 @@
 class Hello{
     public static void main(String a[]){
-        System.out.println("Hello World");
-        DataType.data_type();
-
-        int nums_1D[] = Array.assign_values(new int[5]);
-        Array.print_array(nums_1D);
-
-        int nums_2D[][] = Array.assign_values(new int[5][9]);
-        Array.print_array(nums_2D);
+        Initializer init = new Initializer();
+        Initializer init2 = new Initializer();
     }
 
 }
+
+class Initializer{
+    Initializer(){
+        display();
+        arrays();
+    }
+
+    void display(){
+       System.out.println("Hello World");
+       DataType.data_type();
+    }
+
+    void arrays(){
+        int arr[] = new int[5];
+        arr = Array.assign_values(arr);
+        Array.print_array(arr);
+
+        int arr2d[][] = new int[3][4];
+        arr2d = Array.assign_values(arr2d);
+        Array.print_array(arr2d);
+    }
+}
+
 class Array{
 
     public static int[] assign_values(int arr[]){
@@ -49,7 +66,6 @@ class Array{
         }
     }
 }
-
 
 class DataType{
     static void data_type(){
